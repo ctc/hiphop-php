@@ -39,12 +39,6 @@ endif()
 
 # libmemcached checks
 find_package(Libmemcached REQUIRED)
-if (LIBMEMCACHED_VERSION VERSION_LESS "0.39")
-  unset(LIBMEMCACHED_INCLUDE_DIR CACHE)
-  unset(LIBMEMCACHED_LIBRARY CACHE)
-  unset(LIBMEMCACHED_VERSION CACHE)
-  message(FATAL_ERROR "libmemcache is too old, found ${LIBMEMCACHED_VERSION} and we need 0.39")
-endif ()
 include_directories(${LIBMEMCACHED_INCLUDE_DIR})
 
 # pcre checks
